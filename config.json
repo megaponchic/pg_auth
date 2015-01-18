@@ -1,0 +1,12 @@
+{
+    "description"       : "JSON does not allow comments" ,
+    "group"             : "db_edarling",
+    "name"              : "edarling_web_api",
+    "class"             : "postgres_sql",
+    "subclass"          : "versioned",
+    "owner_role"        : "edarling",
+    "version"           : "00_00_10",
+    "user_role"         : [ "public", "ed_app" ],
+    "type_sequence"     : [ "ed_web_comment_freetext.sql", "ed_web_conversation.sql" ],
+    "function_sequence" : [ "psytest_management/web_get_register_next_page.sql", "resource_management/web_get_occupation_titles.sql"]
+}
