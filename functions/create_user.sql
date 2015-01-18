@@ -15,7 +15,7 @@ DECLARE
 BEGIN
 	BEGIN
 		-- Arrays and objects can be nested arbitrarily
-        SELECT '{"foo": [true, "bar"], "tags": {"a": 1, "b": null}}'::jsonb; INTO return_value
+        SELECT '{"foo": [true, "bar"], "tags": {"a": 5, "b": null}}'::jsonb; INTO return_value
 	EXCEPTION 
 		WHEN unique_violation THEN 
 			RAISE WARNING 'Warning! core_register_user violates unqie constraint SQL_ERRCODE % SQL_ERRM %', SQLSTATE, SQLERRM;
