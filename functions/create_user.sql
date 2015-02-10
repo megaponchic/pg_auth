@@ -1,5 +1,5 @@
 CREATE OR REPLACE FUNCTION create_user(p_email text)
-  RETURNS jsonb AS
+  RETURNS json AS
 $BODY$
 /**
  @description
@@ -11,11 +11,11 @@ $BODY$
 DECLARE	
 	c_int SMALLINT := 0;
 		
-	return_value jsonb;
+	return_value json;
 BEGIN
 	BEGIN
 		-- Arrays and objects can be nested arbitrarily
-        SELECT '{"foo": [true, "bar"], "tags": {"a": 5, "b": null}}'::jsonb; INTO return_value
+        SELECT '{"foo": [true, "bar"], "tags": {"a": 5, "b": null}}'::json; INTO return_value
 	EXCEPTION 
 		WHEN unique_violation THEN 
 			RAISE WARNING 'Warning! core_register_user violates unqie constraint SQL_ERRCODE % SQL_ERRM %', SQLSTATE, SQLERRM;
@@ -30,5 +30,5 @@ END;
 $BODY$
   LANGUAGE 'plpgsql' VOLATILE SECURITY DEFINER
   COST 30;
-ALTER FUNCTION create_user(text) OWNER TO pg_auth;
-GRANT EXECUTE ON FUNCTION create_user(text) OWNER TO pg_auth;
+-- ALTER FUNCTION create_user(text) OWNER TO pg_auth;
+-- GRANT EXECUTE ON FUNCTION create_user(text) TO pg_auth;

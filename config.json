@@ -1,12 +1,7 @@
 {
     "description"       : "Identity management using Postgres stored procedures" ,
-    "group"             : "de.affinitas",
-    "name"              : "pg_auth",
+    "name"              : "_pg_auth",
     "class"             : "postgres_sql",
     "subclass"          : "versioned",
-    "owner_role"        : "pg_auth",
-    "version"           : "00_00_10",
-    "user_role"         : [ "public" ],
-    "type_sequence"     : [ ],
-    "function_sequence" : [ ]
+    "version"           : "00_00_10"
 }
