@@ -3,5 +3,5 @@
     "name"              : "_pg_auth",
     "class"             : "postgres_sql",
     "subclass"          : "versioned",
-    "version"           : "00_00_10"
+    "version"           : "00_00_20"
 }
